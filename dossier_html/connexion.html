@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{%block contenu%}
+    <h1>Connexion à TaskApp</h1>
+    <p class="sous-titre">Entrez un nom et un mot de passe pour vous connecter.</p>
+    <form action="{{url_for('connexion')}}" method="POST" class="formulaire">
+        <div class="groupe">
+            <label for="nom_utilisateur">Votre nom</label>
+            <input type="text" name="nom_utilisateur" id="nom_utilisateur" placeholder="Ex: Luc" required>
+        </div>
+
+        <div class="groupe">
+            <label for="mdp">Mot de passe</label>
+            <input type="password" name="mdp" id="mdp" placeholder="........" required>
+        </div>
+        
+        <button type="submit" class="bouton">Se connecter</button>
+    </form>
+{%endblock%} 

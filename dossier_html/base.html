@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titre %}{% endblock %} - TaskApp</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <!-- Barre de navigation principale -->
+    <nav class="barre-navigation">
+        <div class="nav-logo">
+            <!-- 1. Affichage de ton logo téléchargé avec la balise <img> -->
+            <img src="{{ url_for('static', filename='logo.svg') }}" alt="Logo TaskApp" class="logo-site-img">
+            Task<span>App</span>
+        </div>
+        
+        <!-- Liens de navigation -->
+        <div class="nav-liens">
+            {%if session.get('utilisateur')%}
+                <span style="color: #888; margin-right: 15px;">Utilisateur : <strong>{{ session['utilisateur'] }}</strong></span>
+                <a href="{{ url_for('deconnexion') }}" style="color: #ff5555; text-decoration: none; font-weight: bold;">Déconnexion</a> 
+            {%else%}
+                <a href="{{ url_for('accueil') }}">Accueil</a>
+            {%endif%}
+        </div>
+    </nav>
+
+    <!-- Conteneur dynamique où le contenu des autres pages va s'injecter -->
+    <div class="conteneur-principal">
+        {% block contenu %}
+        {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titre %}Succès{% endblock %}
+
+{% block contenu %}
+
+    <div class="carte-succes hidden" id="successCard">
+        <div class="icone-succes-anime">
+            ✅
+        </div>
+        <h1>Tâche enregistrée !</h1>
+        
+        <div class="details">
+            <p>Tâche : <strong>{{ tache }}</strong></p>
+            <p>Assignée à : <strong>{{ prenom }}</strong></p>
+        </div>
+        
+        <a href="{{ url_for('accueil') }}" class="lien-retour">
+            ← Ajouter une autre tâche
+        </a>
+    </div>
+
+    <!-- JavaScript pour l'effet d'apparition dynamique -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const card = document.getElementById('successCard');
+            // Un léger délai avant d'activer la transition de visibilité
+            setTimeout(() => {
+                card.classList.remove('hidden');
+                card.classList.add('visible');
+            }, 150);
+        });
+    </script>
+
+{% endblock %}

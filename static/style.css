@@ -1,0 +1,169 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #12121c, #08080d);
+    color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+}
+.barre-navigation {
+    background-color: rgba(30, 30, 45, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #252538;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+.logo-site-img {
+    width: 30px;          
+    height: 30px;        
+    object-fit: contain;  
+    margin-right: 12px;  
+    vertical-align: middle; 
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+.nav-logo span {
+    color: #00d2ff;
+    margin-left: 2px;
+}
+
+.nav-liens a {
+    color: #aaa;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.nav-liens a:hover {
+    color: #00d2ff;
+}
+.conteneur-principal {
+    max-width: 550px;
+    margin: 60px auto;
+    padding: 35px;
+    background-color: #1e1e2d;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2b2b3d;
+}   
+
+h1 {
+    margin-top: 0;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.sous-titre {
+    color: #888;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+.groupe {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ccc;
+    font-size: 14px;
+}
+.input-avec-icone input {
+    width: 100%;
+    padding: 14px;
+    box-sizing: border-box;
+    background-color: #13131f;
+    border: 1px solid #2b2b3d;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.input-avec-icone input:focus {
+    border-color: #00d2ff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 210, 255, 0.2);
+}
+
+/* Bouton d'enregistrement */
+.bouton {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #00d2ff, #00a8ff);
+    border: none;
+    color: #121214;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.bouton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+}
+
+
+
+    
+.carte-succes {
+    text-align: center;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* États pour l'animation d'apparition en JavaScript */
+.carte-succes.hidden {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.carte-succes.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.icone-succes-anime {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.details {
+    background-color: #13131f;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    margin: 25px 0;
+    border-left: 4px solid #00ffaa;
+}
+
+.details p {
+    margin: 10px 0;
+    color: #ddd;
+}
+
+.lien-retour {
+    display: inline-block;
+    color: #00d2ff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.lien-retour:hover {
+    text-decoration: underline;
+}

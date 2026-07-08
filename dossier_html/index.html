@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block titre %}Mes Tâches{% endblock %} 
+{% block contenu %}
+    <h1>Bonjour, {{prenom}} ! 👋</h1>
+    <p class="sous-titre">Espace personnel de gestion de tâches.</p>
+    <form action="{{url_for('accueil')}}" method="POST" id="taskForm" class="formulaire">
+
+        <div class="groupe">
+            <label for="titre">Nouvelle tâche personnelle</label>
+            <div class="input-avec-icone">
+                <input type="text" id="titre" name="nom_tache" placeholder="Ex: Développer l'interface graphique" required>
+            </div>
+        </div>
+        <button type="submit" class="bouton">Enregistrer la tâche</button>
+    </form>
+
+<!-- Liste des tâches privées de l'utillisateur -->
+    <h2>Vos tâches en cours :</h2>
+    {%if taches%}
+        <ul style="list-style: none; padding: 0;">
+            {%for tache in taches%}
+                <li style="background: #13131f; padding: 15px; margin-bottom: 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #2b2b3d;">
+                    <span>{{tache}}</span>
+                    <a href="{{ url_for('supprimer_tache', tache_id=loop.index0) }}" style="color: #ff5555; text-decoration: none; font-weight: bold;">❌ Supprimer</a>
+                </li>
+            {%endfor%}   
+     
+        </ul>
+    {%else%}
+        <p style="color: #666; font-style: italic;">Vous n'avez aucune tâche enregistrée pour le moment.</p>
+    {%endif%}
+{% endblock %}

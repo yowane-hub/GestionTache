@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block titre%} Espace Admin {%endblock%}
+{%block contenu%}
+    <h1>Panneau d'Administration 🕵️‍♂️</h1>
+    <p class="sous-titre">Aperçu en temps réel des tâches de tous vos amis connectés.</p>
+    <div style="margin-top: 30px;">
+        {% if toutes_les_donnees %}
+            {% for utilisateur, liste_taches in toutes_les_donnees.items() %}
+                <div style="background: #13131f; padding: 20px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #00d2ff;">
+                    <h3 style="color: #00d2ff; margin-top: 0;">👤 Utilisateur : {{ utilisateur }}</h3>
+                    {% if liste_taches %}
+                        <ul style="list-style: circle; padding-left: 20px; color: #fff;">
+                            {% for tache in liste_taches %}
+                                <li style="margin-bottom: 8px;">{{ tache }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p style="color: #666; font-style: italic; margin-bottom: 0;">Aucune tâche pour le moment.</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        {%else%}
+            <p style="color: #666; font-style: italic;">Aucun utilisateur n'a encore créé de tâche sur le serveur.</p>
+        {% endif %}
+    </div>
+    <a href="{{ url_for('accueil') }}" style="color: #00d2ff; text-decoration: none; display: inline-block; margin-top: 20px;">← Retour à mon espace</a>
+
+{%endblock%}
